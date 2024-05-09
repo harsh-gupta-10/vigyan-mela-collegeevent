@@ -1,0 +1,249 @@
+* {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
+        header {
+          width: 100%;
+          height: 50px;
+          background: #f8f8f8;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        .logo {
+          color: rgb(44, 44, 44);
+          font-size: 1.5em;
+          
+        }
+        /* ... Your existing styles ... */
+      
+      .menu-icon {
+        width: 30px; /* Adjust the width as needed */
+        height: 30px; /* Adjust the height as needed */
+        cursor: pointer;
+        opacity: 0;
+      }
+      
+      /* ... Your existing styles ... */
+      
+        .nav {
+          display: flex;
+          align-items: left;
+        }
+        .nav ol {
+          display: flex;
+          list-style: none;
+        }
+        .btn {
+          position: relative;
+          width: 25px;
+          height: 25px;
+          -webkit-appearance: none;
+          appearance: none;
+          cursor: pointer;
+         
+        }
+        .btn::before {
+          content: "\f0c9";
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-family: "Font Awsome 5 Free";
+          font-weight: 700;
+          font-size: 2em;
+          display: block;
+        }
+        .nav ol li {
+          margin: 1em;
+        }
+        .nav ol li a {
+          text-decoration: none;
+          padding: 0.2em 1.2em 0.9em 1.2em;
+          border-radius: 10px 10px 0 0;
+          color: rgb(39, 39, 39);
+          transition: all 0.4s;
+          position: relative;
+          z-index: 1;
+        }
+        .nav ol li a::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 41px;
+          border-radius: 10px 10px 0 0;
+          background: #853333;
+          transform-origin: bottom;
+          background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+          transform: scaleY(0.05);
+          z-index: -1;
+          transition: all 0.4s;
+        }
+        .nav ol li a:hover::before {
+          transform: scaleY(1.1);
+        }
+        .nav ol li a:hover {
+          color: white;
+        }
+        /* responsive */
+        @media (max-width: 1200px) {
+          .btn {
+            display: flex;
+            z-index: 100;
+          }
+          header {
+            justify-content: space-between;
+            padding: 0.2em;
+          }
+          .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-110%);
+            transition: all 0.4s;
+            z-index: 1000; /* Ensure the navbar is above other content */
+        }
+          button:checked ~ .nav {
+            transform: translateY(0%);
+          }
+          button:checked::before {
+            content: "\f00d";
+          }
+        }
+        @media (max-width: 700px) {
+          .nav ol {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+        /* @media (max-width: 768px) {
+          .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            transform: translateY(-110%);
+            transition: all 0.4s;
+          }
+        
+          .nav.show {
+            transform: translateY(0px);
+          }
+        
+          .main {
+            margin-top: 0;
+          }
+        
+          .nav.show ~ .main {
+            margin-top: 100vh;
+          }
+        } */
+      
+        /* Responsive */
+      @media (max-width: 768px) {
+          .nav {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              background: #f8f8f8;
+              display: flex;
+              flex-direction: column;
+              justify-content: right;
+              align-items: center;
+              transform: translateY(-110%);
+              transition: all 0.4s;
+              z-index: 1000; /* Ensure the navbar is above other content */
+          }
+      
+          .nav.show {
+              transform: translateY(0%);
+          }
+      
+          .nav ol {
+              flex-direction: column;
+              text-align: center;
+          }
+      
+          .nav ol li {
+              margin: 1em;
+          }
+      
+          .nav ol li a {
+              position: relative;
+              z-index: 1;
+              text-decoration: none;
+              padding: 0.2em 1.2em 0.9em 1.2em;
+              border-radius: 10px 10px 0 0;
+              color: rgb(39, 39, 39);
+              transition: all 0.4s;
+          }
+      
+          .nav ol li a::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 41px;
+              border-radius: 10px 10px 0 0;
+              background: #853333;
+              transform-origin: bottom;
+              background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+              transform: scaleY(0.05);
+              z-index: -1;
+              transition: all 0.4s;
+          }
+      
+          .nav ol li a:hover::before {
+              transform: scaleY(1.1);
+          }
+      
+          .nav ol li a:hover {
+              color: white;
+          }
+      
+          .btn {
+              display: flex;
+              z-index: 100;
+          }
+          .menu-icon {
+            width: 30px; /* Adjust the width as needed */
+            height: 30px; /* Adjust the height as needed */
+            cursor: pointer;
+            opacity: 10;
+          }
+          header {
+              justify-content: space-between;
+              padding: 0.2em;
+          }
+      
+          button:checked::before {
+              content: "\f00d";
+          }
+      }
+      
+      /* Main Content */
+      .main {
+          margin-top: 50px; /* Adjusted to ensure content is below the navbar */
+      }
+       
+      .nav ol li a{
+        scroll-snap-align: start;
+      }
+      .nav-home{
+        scroll-snap-type:y mandatory;
+      }
+      
+      

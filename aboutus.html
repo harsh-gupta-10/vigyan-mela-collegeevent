@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="CSS/aboutus.css" type="text/css">
+  <link rel="stylesheet" href="CSS/chedkani.css">
+  <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+    .slider-container {
+      width: 40%;
+      height: 30%;
+      align-items: center;
+      overflow: hidden;
+
+
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* img {
+                    width: 100%;
+                    height: auto;
+                  } */
+    #container.img {
+      max-width: 10px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <p class="logo" style="font-family: sans-serif;"><img src="IMGS2/logo2.jpg
+                      " height="55" width="200" id="logo2" alt="Your Company Logo"></p>
+    <!-- <input type="checkbox" name="" class="btn" id="menu-toggle"> -->
+
+    <img src="IMGS2/sidebar.svg" alt="Menu Icon" class="menu-icon" id="menu-toggle">
+
+    <div class="nav">
+      <ol>
+        <li class="nav-home"> <a href="index.html"><b>HOME</b></a></li>
+        <li><a href="aboutus.html"><b>ABOUT US</b></a></li>
+        <li><a href="contact.php"><b>CONTACT US</b></a></li>
+        <li><a href="register.php"><b>Get Ticket</b></a></li>
+      </ol>
+    </div>
+  </header>
+  <div class="container">
+    <br><br>
+    <h1 align="center">About Us</h1>
+    <!-- <a href="#" class="logo" align="center">About <b>Us</b></a>
+<br><br> -->
+    <div class="landing-page">
+
+      <div class="content">
+        <div class="container">
+          <div class="info">
+            <h1>Vigyaan Mela 2.0</h1>
+            <p>Welcome to Vigyaan Mela , where technology and science converge to shape our future! We're a passionate
+              team dedicated to fostering innovation and exploration in the realms of technology and science.
+
+              At Vigyaan Mela, we believe in the power of knowledge and creativity to drive progress. Our mission is to
+              showcase cutting-edge advancements, inspire curiosity, and ignite a passion for discovery among
+              visitors 
+              of all ages.</p>
+
+          </div>
+          <div class="image">
+            <img src="IMGS2/boy.jpg">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <center>
+      <div class="slider-container" align="center">
+        <div class="slider">
+          <div class="slide">
+            <img src="IMGS2/radar.jpg" alt="Slide 1">
+          </div>
+          <div class="slide">
+            <img src="IMGS2/car.jpg" alt="Slide 2" style="height:500px">
+          </div>
+          <div class="slide">
+            <img src="IMGS2/parking.jpg" alt="Slide 3">
+          </div>
+          <div class="slide">
+            <img src="IMGS2/.jpg" alt="Slide 3">
+          </div>
+          <div class="slide">
+            <img src="IMGS2/data_center.jpg" alt="Slide 3">
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+      </div>
+    </center>
+    <script src="JS/aboutus.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  // ScrollTrigger for the content animation
+  gsap.from('.landing-page .content .info', {
+    scrollTrigger: {
+      trigger: '.landing-page .content .info',
+      start: 'top center', // Adjust the start position as needed
+      end: 'bottom center', // Adjust the end position as needed
+      scrub: 1, // Controls the smoothness of the animation
+    },
+    x: '100%', // Slide in from the right
+  });
+
+  gsap.from('.landing-page .content .image img', {
+    scrollTrigger: {
+      trigger: '.landing-page .content .image img',
+      start: 'top center', // Adjust the start position as needed
+      end: 'bottom center', // Adjust the end position as needed
+      scrub: 1, // Controls the smoothness of the animation
+    },
+    x: '-100%', // Slide in from the left
+  });
+
+  // Your existing code...
+});
+</script>
+</body>
+
+</html>
